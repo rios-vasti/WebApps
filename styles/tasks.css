@@ -1,0 +1,68 @@
+body 
+{
+    background-color: #edf7F6;
+}
+
+ul 
+{
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ffa8B6;
+
+}
+
+.NavBar 
+{
+    display: inline;
+    float: left;
+    
+}
+
+
+.NavBar a 
+{
+    display: block;
+    padding: 8px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.NavBar a:hover 
+{
+    background-color:#a28089;
+}
+h1
+{
+    color: #37aab9
+}
+  
+h2
+{
+    color: #5ebeb3
+}
+h3
+{
+    color:#a28089;
+}
+
+
+*
+{
+    font-family:  "Lucida Handwriting", "Brush Script MT", cursive;
+    color: #352431;
+    text-align: center;
+}
+  
+img 
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    border-radius: 25px;
+}

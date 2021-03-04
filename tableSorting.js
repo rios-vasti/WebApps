@@ -11,7 +11,7 @@ function filterTable()
     let tr = table.getElementsByTagName("tr");
     for (let i = 0; i < numRow; i++)
     {
-        let td = tr[i].getElementsByTagName("td")[j];
+        let td = tr[i].getElementsByTagName("td")[0];
         if (td) 
         {
             let txtValue = td.textContent || td.innerText;

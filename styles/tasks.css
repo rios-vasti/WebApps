@@ -34,22 +34,26 @@ ul
 
 .NavBar a:hover 
 {
-    background-color:#a28089;
+    background-color:#d6909c;
 }
 h1
 {
-    color: #37aab9
+    color: #37aab9;
 }
   
 h2
 {
-    color: #5ebeb3
+    color: #5ebeb3;
 }
 h3
 {
     color:#a28089;
 }
-
+#filterBy
+{
+    text-align: left;
+    display:block; 
+}
 
 *
 {
@@ -65,4 +69,18 @@ img
     margin-right: auto;
     width: 40%;
     border-radius: 25px;
+}
+button 
+{
+    color:white; 
+    background-color:#5ebeb3;
+    border: 2px solid #5ebeb3;
+    transition-duration: 0.4s;
+}
+  
+button:hover 
+{
+    background-color: #326b64; 
+    border: 2px solid #326b64;
+    color: white;
 }

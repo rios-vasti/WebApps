@@ -6,19 +6,21 @@ let macawPosX = 0;
 let macawPosY = 0; 
 let macawH = 446;
 let macawW = 400;
-let motion = 5;
+let motion = 10;
 let numFrame = 0; 
 let images = []
-let backgroundH = 240;
-let backgroundW = 630;
-let shiftBackgorund = backgroundW;
+let backgroundH = 700;
+let backgroundW = 1838-20;
+let shiftBackgorund = 0;//backgroundW/2;
+let shiftBackgorund2 = backgroundW;//+backgroundW/2;
+let backgroundSpeed = 8; 
 function init()
 {
   for (let i = 0; i < 10; i++)
   {
     bluMacaw[i].src = 'images/macawAnimation/frame'+ i + '.png' 
-    rainforest1.src = 'images/tropicalRainforest2.png'
-    rainforest2.src = 'images/tropicalRainforest2.png'
+    rainforest1.src = 'images/tropicalRainforest3.png'
+    rainforest2.src = 'images/tropicalRainforest3.png'
     // console.log(bluMacaw[i]);
 
   }
@@ -58,15 +60,29 @@ setInterval(function(){
   {
     numFrame = 0;
   }  
-  if (shiftBackgorund > 0)
+
+  if (shiftBackgorund > -backgroundW)//-(backgroundW)
   {
-    shiftBackgorund = shiftBackgorund - 2;
-    
+    shiftBackgorund = shiftBackgorund - backgroundSpeed;
+
+  }
+  else
+  {
+    shiftBackgorund = backgroundW;
+    //console.log("image1: " + shiftBackgorund);
+  }
+
+  if (shiftBackgorund2 > -backgroundW)//-(backgroundW)
+  {
+    shiftBackgorund2 = shiftBackgorund2 - backgroundSpeed;
   }
   else 
   {
-    shiftBackgorund = backgroundW;
+    shiftBackgorund2 = backgroundW;
+    //console.log("image2: " + shiftBackgorund2);
   }  
+
+  //console.log(shiftBackgorund, shiftBackgorund2);
 }
   , 50);
 
@@ -80,8 +96,9 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     //ctx.fillRect(0, imageY, 40, 24);
     //ctx.drawImage(rainforest,0, 0, canvas.width, canvas.height)
-    ctx.drawImage(rainforest1, shiftBackgorund, 0, backgroundW/2, backgroundH, 0, 0, canvas.width, canvas.height);
-    //ctx.drawImage(rainforest2, shiftBackgorund + backgroundW/2, 0, backgroundW/2, backgroundH, 0, 0, canvas.width, canvas.height);
+    ctx.drawImage(rainforest1, shiftBackgorund2, 0, backgroundW, backgroundH, 0, 0, backgroundW, canvas.height);
+    ctx.drawImage(rainforest1, shiftBackgorund, 0, backgroundW, backgroundH, 0, 0, backgroundW, canvas.height);
+    
     ctx.drawImage(bluMacaw[numFrame], 250, macawPosY);
     window.requestAnimationFrame(draw);
 
